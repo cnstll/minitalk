@@ -45,7 +45,7 @@ void	send_char_as_signals(int pid_of_endpoint, char ascii_character)
 	bit_position = 7;
 	while (bit_position >= 0)
 	{
-		usleep(1000);
+		usleep(100);
 		if (ascii_character & (1 << bit_position))
 			kill(pid_of_endpoint, SIGUSR1);
 		else
