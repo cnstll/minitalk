@@ -22,7 +22,7 @@ static void	handle_sigusr(int signal_number)
 
 int	main(void)
 {
-	pid_t				pid;
+	pid_t	pid;
 
 	pid = getpid();
 	write(1, "Server PID: ", 12);
