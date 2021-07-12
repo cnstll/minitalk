@@ -1,7 +1,7 @@
 #include "../headers/client.h"
 #include "../headers/shared.h"
 
-void	convert_string_to_signals(int server_pid, char *string_to_send)
+static void	convert_string_to_signals(int server_pid, char *string_to_send)
 {
 	int		i;
 
@@ -11,6 +11,7 @@ void	convert_string_to_signals(int server_pid, char *string_to_send)
 		send_char_as_signals(server_pid, string_to_send[i]);
 		i++;
 	}
+	send_char_as_signals(server_pid, string_to_send[i]);
 }
 
 int	main(int argc, char *argv[])

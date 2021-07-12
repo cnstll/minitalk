@@ -1,7 +1,7 @@
 #include "../headers/server.h"
 #include "../headers/shared.h"
 
-void	write_char(char c)
+static void	write_char(char c)
 {
 	write(1, &c, 1);
 }

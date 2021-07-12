@@ -1,7 +1,7 @@
 #include "../headers/client.h"
 #include "../headers/shared.h"
 
-int	is_digit(char character)
+static int	is_digit(char character)
 {
 	return (character < '0' || character > '9');
 }
@@ -42,14 +42,14 @@ void	send_char_as_signals(int pid_of_endpoint, char ascii_character)
 {
 	int		bit_position;
 
-	bit_position = 7;
-	while (bit_position >= 0)
+	bit_position = 0;
+	while (bit_position < 8)
 	{
-		usleep(1000);
 		if (ascii_character & (1 << bit_position))
 			kill(pid_of_endpoint, SIGUSR1);
 		else
 			kill(pid_of_endpoint, SIGUSR2);
-		bit_position--;
+		bit_position++;
+		usleep(100);
 	}
 }
