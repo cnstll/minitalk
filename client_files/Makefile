@@ -6,7 +6,7 @@ SRCS = srcs/client.c \
 
 OBJS = $(SRCS:.c=.o)
 
-CC = clang-9
+CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 
