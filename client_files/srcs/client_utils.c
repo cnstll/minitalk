@@ -50,6 +50,6 @@ void	send_char_as_signals(int pid_of_endpoint, char ascii_character)
 		else
 			kill(pid_of_endpoint, SIGUSR2);
 		bit_position++;
-		usleep(20);
+		usleep(100);
 	}
 }
